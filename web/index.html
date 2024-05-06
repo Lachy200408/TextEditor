@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	
+	<title>Text Editor</title>
+	<link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
+
+	<script type="module" src="./scripts/inicioApp.js" async></script>
+	<link preload rel="stylesheet" href="./styles/style.css">
+
+	<meta name="description" content="A fast and online text editor, that allows you to create, store, edit and download text files."/>
+	<meta name="robots" content="index, follow"/>
+	<meta name="theme-color" content="#c6c3d1"/>
+	<meta name="author" content="Lázaro Parra González"/>
+	<meta property="og:title" content="Text Editor"/>
+	<meta property="og:description" content="A fast and online text editor, that allows you to create, store, edit and download text files."/>
+	<meta property="og:image" content="/assets/images/site-thumbnail.webp"/>
+	<meta property="og:image:alt" content="Text Editor"/>
+</head>
+<body>
+	<header class="hidden">
+		<button id="downloadBtn">Download</button>
+		
+		<!-- * El botón de expandir y contraer el menu y su código -->
+		<button id="showHideMenu">></button>
+		<script>
+			const boton = window.showHideMenu
+			const header = document.body.children[0]
+
+			boton.addEventListener('click', () => {
+				if (header.className === 'hidden') {
+					header.className = ''
+					boton.innerText = '<'
+				}
+				else {
+					header.className = 'hidden'
+					boton.innerText = '>'
+				}
+			}, false)
+		</script>
+	</header>
+	<main>
+		<form action="/" method="post">
+			<textarea name="board" id="board"></textarea>
+		</form>
+	</main>
+</body>
+</html>
